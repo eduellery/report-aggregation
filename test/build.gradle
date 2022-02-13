@@ -22,10 +22,7 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.liquibase:liquibase-core'
-	implementation 'com.h2database:h2'
+	implementation project(':app')
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -41,4 +38,11 @@ test {
 
 jacocoTestReport {
 	dependsOn test // tests are required to run before generating the report
+	def appSourceSet = project(':app').sourceSets.main
+	additionalSourceDirs.from appSourceSet.allJava
+	additionalClassDirs.from appSourceSet.output
+}
+
+bootJar {
+	enabled = false
 }

@@ -7,3 +7,4 @@ pluginManagement {
 }
 rootProject.name = 'report-aggregation'
 include 'app'
+include 'test'
