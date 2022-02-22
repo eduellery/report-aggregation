@@ -1,7 +1,13 @@
+APP
+
 ![Unit Coverage](.github/badges/jacoco-unit.svg)
 ![Unit Branches](.github/badges/branches-unit.svg)
+
+TEST
+
 ![Component Coverage](.github/badges/jacoco-component.svg)
 ![Component Branches](.github/badges/branches-component.svg)
+
 
 # Test/JaCoco Report Aggregation
 
