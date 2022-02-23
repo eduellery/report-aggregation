@@ -31,6 +31,12 @@ reporting {
     }
 }
 
+testCodeCoverageReport {
+    reports {
+        csv.required = true
+    }
+}
+
 tasks.named('check') {
     dependsOn tasks.named('testAggregateTestReport', TestReport)
     dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
