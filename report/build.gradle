@@ -1,16 +1,23 @@
+//TODO: Do I really need to re-add the plugins to make jacocoAggregation work?
+
 plugins {
     id 'base'
     id 'test-report-aggregation'
-//    id 'jacoco-report-aggregation'
+    id 'jacoco-report-aggregation'
+    id 'org.springframework.boot' version '2.7.0-SNAPSHOT'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
 }
 
 repositories {
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/snapshot' }
     mavenCentral()
 }
 
 dependencies {
     testReportAggregation project(':test')
-//    jacocoAggregation project(':test')
+    jacocoAggregation project(':test')
 }
 
 reporting {
@@ -18,13 +25,17 @@ reporting {
         testAggregateTestReport(AggregateTestReport) {
             testType = TestSuiteType.UNIT_TEST
         }
-//        testCodeCoverageReport(JacocoCoverageReport) {
-//            testType = TestSuiteType.UNIT_TEST
-//        }
+        testCodeCoverageReport(JacocoCoverageReport) {
+            testType = TestSuiteType.UNIT_TEST
+        }
     }
 }
 
 tasks.named('check') {
     dependsOn tasks.named('testAggregateTestReport', TestReport)
-//    dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
+    dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
+}
+
+bootJar {
+    enabled false
 }
