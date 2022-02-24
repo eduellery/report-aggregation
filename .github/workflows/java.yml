@@ -61,5 +61,5 @@ jobs:
       - name: Upload JaCoCo aggregated coverage report
         uses: actions/upload-artifact@v2
         with:
-          name: jacoco-component-report
+          name: jacoco-aggregated-report
           path: report/build/reports/jacoco/testCodeCoverageReport/html
