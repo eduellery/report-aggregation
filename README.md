@@ -8,6 +8,11 @@ TEST
 ![Component Coverage](.github/badges/jacoco-component.svg)
 ![Component Branches](.github/badges/branches-component.svg)
 
+Aggregated
+
+![Aggregated Coverage](.github/badges/jacoco-aggregated.svg)
+![Aggregated Branches](.github/badges/branches-aggregated.svg)
+
 
 # Test/JaCoco Report Aggregation
 
