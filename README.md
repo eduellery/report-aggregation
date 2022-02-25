@@ -36,6 +36,12 @@ Clean and build all modules:
 ./gradlew clean build
 ```
 
+## Test reports
+
+After building the entire project, reports can be found on `build` folder for each module (`app`, `test`), with `report` containing their aggregated values.
+
+
 ## Pipeline
 
 Pipeline is building and running tests on `app` and `test` modules. Code coverage badges for each module are displayed.
+It is also displayed the aggregated coverage from `report` module.
